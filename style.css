@@ -1,0 +1,87 @@
+body {
+    font-family: 'Tiro Bangla', serif;
+    background-color: #0c1427;
+    background-image: linear-gradient(160deg, #0c1427 0%, #1a2a6c 100%);
+    color: #e0e7ff;
+    line-height: 1.8; /* লেখা স্পষ্ট করার জন্য লাইন-হাইট সমন্বয় করা হয়েছে */
+}
+h1, h2, h3, p, button, input, span {
+     line-height: 1.7; /* লেখা কেটে যাওয়া রোধ করার জন্য লাইন-হাইট যোগ করা হয়েছে */
+}
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+.option-button {
+    background: rgba(255, 255, 255, 0.1);
+    color: #e0e7ff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 0.75rem;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+.option-button:hover:not(.selected):not(.disabled) {
+    background-color: rgba(0, 255, 255, 0.2);
+    border-color: rgba(0, 255, 255, 0.7);
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+.option-button.correct {
+    background-color: #10B981 !important;
+    color: white !important;
+    border-color: #10B981 !important;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+}
+.option-button.incorrect {
+    background-color: #EF4444 !important;
+    color: white !important;
+    border-color: #EF4444 !important;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+}
+.option-button.disabled { cursor: not-allowed; opacity: 0.6; }
+.action-button {
+    background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+}
+.action-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 210, 255, 0.5);
+}
+.action-button:disabled { background: #555; cursor: not-allowed; box-shadow: none; }
+.hidden { display: none; }
+#dark-mode-toggle { display: none; }
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex; justify-content: center; align-items: center; z-index: 2000;
+}
+.modal-content {
+    background: rgba(12, 20, 39, 0.9);
+    padding: 2rem; border-radius: 1rem; text-align: center;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px; width: 90%; color: #e0e7ff;
+}
+.modal-content h3 { font-size: 1.8rem; font-weight: bold; margin-bottom: 1rem; color: #EF4444; }
+#progress-container { width: 100%; background-color: rgba(255, 255, 255, 0.1); border-radius: 9999px; }
+#progress-bar {
+    height: 12px; background: linear-gradient(90deg, #3a7bd5 0%, #00d2ff 100%);
+    border-radius: 9999px; transition: width 0.1s linear, background-color 0.5s ease;
+}
