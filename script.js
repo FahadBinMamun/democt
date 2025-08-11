@@ -41,7 +41,7 @@ const allQuestions = [
 
 // --- ক্লাস টেস্টের অন্যান্য সেটিংস ---
 const QUESTIONS_PER_QUIZ = 5;
-const TIME_PER_QUESTION = 20; // সেকেন্ড
+const TIME_PER_QUESTION = 50; // সেকেন্ড
 const FEEDBACK_DELAY_MS = 1500;
 
 // =========================================================================
