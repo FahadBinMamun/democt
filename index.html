@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ষষ্ঠ শ্রেণি: আইসিটি ক্লাস টেস্ট</title>
+    
+    <!-- External CSS File Link -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="antialiased">
+    <div class="container max-w-4xl mx-auto p-4 md:p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 py-2">আইসিটি ক্লাস টেস্ট</h1>
+            <p class="text-2xl mt-2 text-cyan-300">ষষ্ঠ শ্রেণি</p>
+            <p class="text-xl mt-1 text-blue-300">অধ্যায় ১: তথ্য ও যোগাযোগ প্রযুক্তির পরিচিতি</p>
+        </header>
+
+        <!-- লগইন সেকশন -->
+        <div id="login-section" class="card max-w-md mx-auto">
+            <h2 class="text-2xl font-bold mb-6 text-center text-cyan-400">ক্লাস টেস্টে লগইন করো</h2>
+            <input type="text" id="student-roll" class="w-full text-center p-3 border border-cyan-400/30 bg-white/5 rounded-lg mb-4 focus:ring-2 focus:ring-cyan-400 focus:outline-none" placeholder="তোমার রোল নম্বর লেখো" required>
+            <input type="password" id="pin-input" class="w-full text-center p-3 border border-cyan-400/30 bg-white/5 rounded-lg mb-4 focus:ring-2 focus:ring-cyan-400 focus:outline-none" placeholder="তোমার গোপন পিন লেখো" required>
+            <button id="login-button" class="action-button">প্রবেশ করো</button>
+            <p id="error-message" class="text-red-400 mt-4 hidden text-center"></p>
+        </div>
+
+        <!-- ক্লাস টেস্ট সেকশন -->
+        <div id="quiz-section" class="card hidden">
+            <div class="flex justify-between items-center mb-2 flex-wrap">
+                <p class="text-lg font-semibold">স্কোর: <span id="current-score">0</span></p>
+                <p class="text-lg font-semibold text-cyan-400">প্রশ্ন <span id="question-number">1</span> / <span id="total-questions">0</span></p>
+            </div>
+            <div class="flex justify-between items-center mb-4">
+                <div id="progress-container" class="w-full">
+                    <div id="progress-bar" style="width: 100%;"></div>
+                </div>
+                <span id="timer" class="font-bold text-lg ml-4 text-red-400"></span>
+            </div>
+            <h2 id="question-text" class="text-2xl font-bold mb-6 text-blue-300">প্রশ্ন এখানে থাকবে?</h2>
+            <div id="options-container" class="grid grid-cols-1 gap-3"></div>
+            <p id="feedback" class="text-center font-bold mt-4 hidden"></p>
+        </div>
+
+        <!-- ফলাফল সেকশন -->
+        <div id="result-section" class="card hidden text-center">
+            <h2 class="text-3xl font-bold mb-6 text-cyan-400">ক্লাস টেস্ট শেষ!</h2>
+            <div class="bg-white/5 p-4 rounded-lg mb-6 text-left border border-cyan-400/20">
+                <h3 class="font-bold text-lg mb-2 text-cyan-400">অংশগ্রহণকারীর তথ্য:</h3>
+                <p><strong>নাম:</strong> <span id="participant-name"></span></p>
+                <p><strong>রোল:</strong> <span id="participant-roll"></span></p>
+            </div>
+            <p class="text-2xl font-bold mb-4 text-blue-300">তোমার ফাইনাল স্কোর: <span id="final-score">0</span> / <span id="final-total">0</span></p>
+            <p id="result-message" class="text-lg mb-8"></p>
+            <p id="submission-status" class="font-bold"></p>
+            <button id="toggle-review-button" class="action-button mt-4" style="background: linear-gradient(90deg, #10B981 0%, #2dd4bf 100%);">উত্তর পর্যালোচনা করুন</button>
+        </div>
+
+        <!-- উত্তর পর্যালোচনা সেকশন -->
+        <div id="answer-review-section" class="hidden mt-8 text-left">
+            <h3 class="text-2xl font-bold text-center mb-4 text-cyan-400">প্রশ্নাবলীর বিস্তারিত পর্যালোচনা</h3>
+            <div id="review-container"></div>
+        </div>
+    </div>
+    
+    <!-- ট্যাব সুইচ ওয়ার্নিং মডেল -->
+    <div id="tab-switch-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h3>সতর্কতা!</h3>
+            <p>তুমি ক্লাস টেস্ট চলাকালীন অন্য ট্যাবে চলে গিয়েছিলে। তোমার পরীক্ষাটি বাতিল করা হয়েছে।</p>
+            <button onclick="window.location.reload()">পেজটি রিলোড করো</button>
+        </div>
+    </div>
+
+    <!-- External JavaScript File Link -->
+    <script src="script.js"></script>
+</body>
+</html>
